@@ -42,6 +42,11 @@ group :development, :test do
   gem 'pry'
 end
 
+gem 'foundation-rails'
+group :development do
+  gem 'rails_layout'
+end
+
 # gem 'rails_12factor', group: [:production]
 
 gem "geocoder"
