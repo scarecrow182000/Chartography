@@ -1,1 +1,24 @@
-<div id="map"></div>
+
+<div class="large-3 small-6 columns" id="search">
+  <%= simple_form_for @search do |f|%>
+    <%= f.input :search_name, label:'Artist or Band'%>
+    <%= f.association :search_date, label: 'When?' %>
+    <%= f.input :location, placeholder: 'Where?' %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+<div class="large-9 small-12 columns" id="map">
+</div>
+
+<div class="large-3 small-6 columns" id="results">
+</div>
+
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username, label: 'Your username please' %>
+  <%= f.input :password, hint: 'No special characters.' %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :remember_me, inline_label: 'Yes, remember me' %>
+  <%= f.button :submit %>
+<% end %>

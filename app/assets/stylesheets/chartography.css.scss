@@ -2,7 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#map { height: 600px;
-       width: 800px;
+#map { height: 580px;
+       background-color: black;
        float: left
+}
+#search { height: 290px;
+          background-color: #95A5A6;
+          float: right
+}
+#results { height: 290px;
+          float: right;
+          clear: right;
+          background-color: #1d1d1d
 }
