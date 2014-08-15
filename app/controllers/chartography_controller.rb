@@ -1,7 +1,8 @@
 class ChartographyController < ApplicationController
 
   def view
-    @search = Event.search(params)
+    # @query = Event.new
+    # event.querry(params)
   end
 
 end

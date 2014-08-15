@@ -4,11 +4,14 @@
 
 #map { height: 580px;
        background-color: black;
-       float: left
+       float: left;
+       clear: left
 }
 #search { height: 290px;
           background-color: #95A5A6;
-          float: right
+          float: right;
+          clear: right;
+          padding-top: 1rem
 }
 #results { height: 290px;
           float: right;
