@@ -5,13 +5,13 @@
     <title><%= content_for?(:title) ? yield(:title) : "Chartography" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Chartography" %>">
     <%= stylesheet_link_tag 'application', media: 'all'%>
-    <%# Modernizr is required for Zurb Foundation %>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application'%>
-     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <%= csrf_meta_tags %>
   </head>
+
   <body>
     <header>
       <%= render 'layouts/navigation' %>
@@ -21,4 +21,5 @@
          <%= yield %>
       </main>
   </body>
+
 </html>
