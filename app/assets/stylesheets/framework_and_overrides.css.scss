@@ -1,6 +1,10 @@
+
+$fieldset-margin: rem-calc(0);
+$fieldset-padding: rem-calc(0);
+$fieldset-border-color: #1d1d1d;
+
 // import the CSS framework
 @import "foundation";
-
 
 // override for the 'Home' navigation link
 .top-bar .name {
@@ -10,6 +14,10 @@
   font-weight: normal;
   color: white;
   padding: 0 15px; }
+.top-bar .media {
+  height: 45px;
+  max-width: auto;
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create mixins using Foundation classes
