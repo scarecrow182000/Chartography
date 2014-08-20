@@ -1,8 +1,7 @@
 class ChartographyController < ApplicationController
 
   def view
-    # @query = Event.new
-    # event.querry(params)
+    @concerts = Event.search(params[:performer])
   end
 
 end

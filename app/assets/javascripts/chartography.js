@@ -7,4 +7,8 @@ $(window).ready(function(){
       maxZoom: 18
   }).addTo(map);
 
+  L.marker([51.5, -0.09]).addTo(map)
+  .bindPopup('CONCERT HEEAR @ THIS VENU!!!!1!!')
+  .openPopup();
+
 });

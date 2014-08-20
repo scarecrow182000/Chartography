@@ -1,38 +1,38 @@
 
 <div class="large-3 xsmall-12 columns" id="search">
 
-  <div class="large-11 columns">
-    <div class="step-one-label">
-      <label> Step 1... </label>
-    </div>
+  <%= form_tag root_path, method: 'get', do %>
+  <div class="large-12 columns">
     <div class="row collapse">
       <div class="small-12 columns">
-        <input type="text" placeholder="Artist or Band Name">
+        <label> Step 1... </label>
+        <%= text_field_tag :performer, "", placeholder: 'Artist or Band Name...' %>
       </div>
     </div>
   </div>
 
-  <label>Step 2...</label>
   <fieldset>
+    <label>Step 2...</label>
     <div class="row">
       <div class="small-12 columns">
-        <input type="radio" name="location" value="location" id="location"><label for="location">Location</label>
-        <input type="radio" name="date" value="date" id="date"><label for="date">Date</label>
+        <input type="radio" name="option" value="location" id="location"><label for="location">Location</label>
+        <input type="radio" name="option" value="date" id="date"><label for="date">Date</label>
       </div>
     </div>
     <div class="large-12 columns">
       <div class="row collapse">
         <div class="small-12 columns">
-          <input type="text" placeholder="When or Where">
+          <%= text_field_tag :option, "", placeholder: "When or Where" %>
         </div>
       </div>
     </div>
   </fieldset>
-  <br>
 
+  <br>
   <div style="text-align: center;">
-    <a href="#" class="small button round disabled [radius round]">Submit</a>
+    <%= submit_tag "search", class:"small button round [radius round]" %>
   </div>
+  <% end %>
 
 </div>
 
@@ -46,8 +46,7 @@
     <div class="result-container-1" style="height: 260px">
       <li data-orbit-slide="headline-1">
         <div>
-          <h2>Headline 1</h2>
-          <h3>Subheadline</h3>
+          <%= debug @concerts %>
         </div>
       </li>
     </div>
