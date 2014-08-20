@@ -39,20 +39,16 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
-gem 'foundation-rails'
 group :development do
   gem 'rails_layout'
-  gem "better_errors"
+  # gem "better_errors"
   gem 'binding_of_caller'
 end
 
-# gem 'rails_12factor', group: [:production]
-
+gem 'foundation-rails'
 gem "geocoder"
 gem 'simple_form', '3.1.0.rc2'
-gem 'httparty'
 gem 'songkickr'
-gem 'pg_search'
-gem 'dotenv-rails', group: [:development, :test]

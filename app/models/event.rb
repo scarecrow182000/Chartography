@@ -1,8 +1,5 @@
 class Event < ActiveRecord::Base
 
-  validates :performer, presence: true
-  validates :option, presence: true, inclusion: { in: %w(date location)}
-
   def self.search(search_text)
     if search_text.blank?
       []
@@ -20,7 +17,11 @@ class Event < ActiveRecord::Base
 
   # def date
   # end
+
   # def location
+  # end
+
+  # def venue
   # end
 
 end

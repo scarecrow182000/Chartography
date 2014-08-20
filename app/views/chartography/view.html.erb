@@ -1,7 +1,7 @@
 
 <div class="large-3 xsmall-12 columns" id="search">
 
-  <%= form_tag root_path, method: 'get', do %>
+  <%= form_tag root_path, method: 'get' do %>
   <div class="large-12 columns">
     <div class="row collapse">
       <div class="small-12 columns">
@@ -19,6 +19,7 @@
         <input type="radio" name="option" value="date" id="date"><label for="date">Date</label>
       </div>
     </div>
+
     <div class="large-12 columns">
       <div class="row collapse">
         <div class="small-12 columns">
@@ -39,7 +40,6 @@
 <div class="large-9 xsmall-12 columns" id="map"></div>
 
 <div class="large-3 xsmall-12 columns" id="results">
-
   <ul class="result-slider" data-orbit
     data-options="slide_number: false;
                   timer: false;">
@@ -59,5 +59,4 @@
       </li>
     </div>
   </ul>
-
 </div>
