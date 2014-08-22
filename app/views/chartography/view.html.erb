@@ -1,62 +1,42 @@
 
-<div class="large-3 xsmall-12 columns" id="search">
+<% if params[:performer].present? %>
+<div class="large-12 small-12 columns" id="results">
+    <% if @concerts.results.none? %>
+      Sorry no events found, pls try again
+    <% else %>
+      Found <%= pluralize @concerts.results.count, "result" %>
+    <% end %>
+</div>
+<% end %>
 
-  <%= form_tag root_path, method: 'get' do %>
-  <div class="large-12 columns">
-    <div class="row collapse">
-      <div class="small-12 columns">
-        <label> Step 1... </label>
-        <%= text_field_tag :performer, "", placeholder: 'Artist or Band Name...' %>
-      </div>
-    </div>
-  </div>
+<div class="large-10 small-12 columns" id="map"></div>
 
-  <fieldset>
-    <label>Step 2...</label>
-    <div class="row">
-      <div class="small-12 columns">
-        <input type="radio" name="option" value="location" id="location"><label for="location">Location</label>
-        <input type="radio" name="option" value="date" id="date"><label for="date">Date</label>
-      </div>
-    </div>
-
-    <div class="large-12 columns">
-      <div class="row collapse">
-        <div class="small-12 columns">
-          <%= text_field_tag :option, "", placeholder: "When or Where" %>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-
-  <br>
-  <div style="text-align: center;">
-    <%= submit_tag "search", class:"small button round [radius round]" %>
-  </div>
-  <% end %>
-
+<div class="large-2 small-12 columns" id="examples">
+    <h3>Examples</h3>
+    <ul>
+      <li><%= link_to "Beyonce", root_path(performer: "beyonce")%></li>
+      <li><%= link_to "Willie Nelson", root_path(performer: "willie nelson")%></li>
+      <li><%= link_to "Megadeath", root_path(performer: "megadeath")%></li>
+      <li><%= link_to "Oxmo Puccino", root_path(performer: "Oxmo Puccino")%></li>
+      <li><%= link_to "Tontons", root_path(performer: "Tontons")%></li>
+    </ul>
 </div>
 
-<div class="large-9 xsmall-12 columns" id="map"></div>
+<% if @concerts.results.any? %>
 
-<div class="large-3 xsmall-12 columns" id="results">
-  <ul class="result-slider" data-orbit
-    data-options="slide_number: false;
-                  timer: false;">
-    <div class="result-container-1" style="height: 260px">
-      <li data-orbit-slide="headline-1">
-        <div>
-          <%= debug @concerts %>
-        </div>
-      </li>
-    </div>
-    <div class="result-container-2" style="height: 260px">
-      <li data-orbit-slide="headline-2">
-        <div>
-          <h2>Headline 2</h2>
-          <h3>Subheadline</h3>
-        </div>
-      </li>
-    </div>
-  </ul>
-</div>
+  <script>
+
+  $(window).ready(function(){
+
+    <% @concerts.results.each do |result| %>
+      L.marker([ <%= result.location.lat %>, <%= result.location.lng %>]).addTo(window.map)
+      .bindPopup('<%= j result.display_name %>')
+      .openPopup();
+    <% end %>
+
+  });
+
+  </script>
+<% end %>
+
+<div class="large-2 small-12 columns" id="spotify"></div>

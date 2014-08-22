@@ -49,12 +49,12 @@ $fieldset-border-color: #1d1d1d;
 // to make views framework-neutral
 main {
   @include twelve-columns;
-  background-color: #1d1d1d;
+  background-color: #000000;
   }
 section {
   @extend .row;
   margin-top: 20px;
   }
 .top-bar {
-  background-color: #1d1d1d;
+  background-color: #000000;
   }

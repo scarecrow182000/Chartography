@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 
   def self.search(search_text)
     if search_text.blank?
-      []
+      EmptyResults.new
     else
       client = Songkickr::Remote.new ENV["SK_API_SK"]
       client.events(type: 'concert', artists: "#{search_text}")
@@ -12,16 +12,11 @@ class Event < ActiveRecord::Base
   def performer
   end
 
-  def option
+
+  class EmptyResults
+    def results
+      []
+    end
   end
-
-  # def date
-  # end
-
-  # def location
-  # end
-
-  # def venue
-  # end
 
 end
