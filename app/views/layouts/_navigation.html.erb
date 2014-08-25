@@ -1,33 +1,25 @@
 <nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name"><%= link_to 'Home', root_path %></li>
-  </ul>
-
-  <%= form_tag root_path, method: 'get' do %>
-      <ul class="left" style= "width: 300px">
-          <%= text_field_tag :performer, params[:performer], placeholder: 'Artist or Band Name...' %>
-      </ul>
-      <ul class="left">
-        <%= image_submit_tag("rock_and_roll_hand.png") %>
-      </ul>
-  <% end %>
-
-  <div id="navcontainer">
-    <ul>
-      <li><a href="http://github.com/"><img src="http://s30.postimg.org/mxlrnvlfx/songkick_logo.png"></a></li>
-      <li><a href="http://spotify.com"><img src="http://s30.postimg.org/mc2i6jkx9/Spotifynewlogo_zpsd6734711.png"></a></li>
-      <li><a href="http://leafletjs.com/"><img src="http://s17.postimg.org/vt5bdqp4r/leaflet_logo.png"></a></li>
-      <li><a href="http://songkick.com"><img src="http://s9.postimg.org/iw8opm8jf/songkick_logo.png"></a></li>
+    <ul class="title-area">
+      <li class="name"><%= link_to 'Home', root_path %></li>
     </ul>
-  </div>
 
+    <%= form_tag root_path, method: 'get' do %>
+      <div class="large-4 small-12 columns">
+          <ul class="left">
+              <%= text_field_tag :performer, params[:performer], placeholder: 'Artist or Band Name...' %>
+          </ul>
+          <ul class="left">
+            <%= image_submit_tag("rock_and_roll_hand.png") %>
+          </ul>
+      </div>
+    <% end %>
+
+    <div id="navcontainer">
+      <ul>
+        <li><a href="http://github.com/"><img src="http://s30.postimg.org/mxlrnvlfx/songkick_logo.png"></a></li>
+        <li><a href="http://spotify.com"><img src="http://s30.postimg.org/mc2i6jkx9/Spotifynewlogo_zpsd6734711.png"></a></li>
+        <li><a href="http://leafletjs.com/"><img src="http://s17.postimg.org/vt5bdqp4r/leaflet_logo.png"></a></li>
+        <li><a href="http://songkick.com"><img src="http://s9.postimg.org/iw8opm8jf/songkick_logo.png"></a></li>
+      </ul>
+    </div>
 </nav>
-
-<!-- // <%= form_tag root_path, method: 'get' do %>
-//   <div id="navsearch">
-//     <ul>
-//       <li><%= text_field_tag :performer, params[:performer], placeholder: 'Artist or Band Name...' %></li>
-//       <li><%= image_submit_tag("rock_and_roll_hand.png") %></li>
-//     </ul>
-//   </div>
-// <% end %> -->

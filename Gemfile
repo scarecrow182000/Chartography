@@ -52,3 +52,4 @@ gem 'foundation-rails'
 gem "geocoder"
 gem 'simple_form', '3.1.0.rc2'
 gem 'songkickr'
+gem 'rspotify'
