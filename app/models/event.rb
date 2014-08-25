@@ -12,7 +12,6 @@ class Event < ActiveRecord::Base
   def performer
   end
 
-
   class EmptyResults
     def results
       []

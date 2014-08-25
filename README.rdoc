@@ -26,6 +26,3 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
-
-url of original image for orbit slider bg:
-http://blog.eventful.com/wp-content/uploads/2012/02/Concert-620x387.jpg

@@ -1,12 +1,13 @@
 
 <% if params[:performer].present? %>
-<div class="large-12 small-12 columns" id="results">
-    <% if @concerts.results.none? %>
-      Sorry no events found, pls try again
-    <% else %>
-      Found <%= pluralize @concerts.results.count, "result" %>
-    <% end %>
-</div>
+  <div class="large-12 small-12 columns" id="results">
+      <% if @concerts.results.none? %>
+        <h3> Sorry no events found, pls try again </h3>
+      <% else %>
+        <%= render partial: 'chartography/display' %>
+        <!-- <h3> Found <%= pluralize @concerts.results.count, "result" %></h3> -->
+      <% end %>
+  </div>
 <% end %>
 
 <div class="large-10 small-12 columns" id="map"></div>
@@ -23,14 +24,13 @@
 </div>
 
 <% if @concerts.results.any? %>
-
   <script>
 
   $(window).ready(function(){
 
     <% @concerts.results.each do |result| %>
       L.marker([ <%= result.location.lat %>, <%= result.location.lng %>]).addTo(window.map)
-      .bindPopup('<%= j result.display_name %>')
+      .bindPopup('<%= link_to "#{j result.display_name}", "http://www.songkick.com" %>')
       .openPopup();
     <% end %>
 
@@ -38,5 +38,3 @@
 
   </script>
 <% end %>
-
-<div class="large-2 small-12 columns" id="spotify"></div>
