@@ -1,11 +1,11 @@
-class Event < ActiveRecord::Base
+class Playlist < ActiveRecord::Base
 
   def self.search(search_text)
     if search_text.blank?
       EmptyResults.new
     else
-      client = Songkickr::Remote.new ENV["SK_API_SK"]
-      client.events(type: 'concert', artists: "#{search_text}")
+      output = RSpotify::Artist.search("#{search_text}")
+      output.first.top_tracks(:US)
     end
   end
 

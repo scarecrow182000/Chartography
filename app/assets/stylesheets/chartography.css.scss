@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#map { height: 600px;
-       background-color: #1d1d1d;
-}
-
 #results { height: 45px;
           background-color: #DC143C;
 }
 
-
 #examples {
-  background: #ecf0f1;
+           background: #ecf0f1;
+           float: right;
+           clear: right;
+}
+
+#spotify {
+          background: #ecf0f1;
+          float: right;
+          clear: right;
+}
+#map { height: 600px;
+       background-color: #1d1d1d;
 }

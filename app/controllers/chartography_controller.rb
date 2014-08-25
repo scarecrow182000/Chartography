@@ -1,8 +1,8 @@
 class ChartographyController < ApplicationController
 
   def view
+    @playlist = Playlist.search(params[:performer])
     @concerts = Event.search(params[:performer])
-    # @playlist = Event.rspotify.artisits.first
   end
 
 end
