@@ -6,14 +6,17 @@
           background-color: #DC143C;
 }
 
-#examples {
-           background: #ecf0f1;
+#examples {background: #000000;
            float: right;
            clear: right;
+           text-color: blue;
+           text-align: center;
+           text-justify: left;
+           ul li { color: blue; }
+           h3 { color: blue; }
 }
 
-#spotify {
-          background: #ecf0f1;
+#spotify {background: #000000;
           float: right;
           clear: right;
 }
