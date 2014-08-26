@@ -53,3 +53,4 @@ gem 'rails_12factor', group: :production
 gem 'foundation-rails'
 gem 'songkickr'
 gem 'rspotify'
+gem 'simple_form', "3.1.0.rc2"
