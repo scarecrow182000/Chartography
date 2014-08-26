@@ -48,8 +48,8 @@ group :development do
   gem 'binding_of_caller'
 end
 
+gem 'rails_12factor', group: :production
+
 gem 'foundation-rails'
-gem "geocoder"
-gem 'simple_form', '3.1.0.rc2'
 gem 'songkickr'
 gem 'rspotify'
