@@ -5,7 +5,7 @@ class Playlist < ActiveRecord::Base
       EmptyResults.new
     else
       output = RSpotify::Artist.search("#{search_text}")
-      output.first.top_tracks(:US)
+      output.first.top_tracks(:US).first.uri
       # binding.pry
     end
   end
